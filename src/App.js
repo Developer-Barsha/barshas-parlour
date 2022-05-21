@@ -1,16 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import { ToastContainer, toast } from 'react-toastify';
- 	import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './Shared/Navbar';
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/Login'
+import Home from './components/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <ToastContainer/>
       <Navbar/>
       <Routes>
-        {/* <Route></Route> */}
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/signup' element={<Login />}></Route>
       </Routes>
     </div>
   );
